@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra. Karina Terrasas · Ortodoncia y Ortopedia · Paseo Tec, Monterrey</title>
+<meta name="description" content="Ortodoncia, ortopedia infantil y odontología preventiva en Paseo Tec, Monterrey. Trato cálido y cercano para toda la familia. Primera consulta sin costo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --aqua:#5BC2C9; --aqua-soft:#7FD8DC; --navy:#2C5F6F; --peach:#FFB6A3;
+    --ink:#264652; --muted:#7A8A90; --pearl:#F4F8F9; --mist:#E4F1F2; --white:#FFFFFF;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:'Montserrat',sans-serif;color:var(--ink);background:var(--white);line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:'Fraunces',serif;font-weight:600;line-height:1.12;color:var(--navy);letter-spacing:-.01em}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 28px}
+  .eyebrow{font-family:'Montserrat',sans-serif;font-weight:600;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;color:var(--aqua)}
+  a{color:inherit;text-decoration:none}
+
+  /* NAV */
+  header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--mist)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+  .brand{display:flex;align-items:center;gap:12px}
+  .brand svg{width:38px;height:38px}
+  .brand .bn{font-family:'Fraunces',serif;font-weight:600;font-size:1.18rem;color:var(--navy);line-height:1}
+  .brand .bs{font-size:.62rem;letter-spacing:.18em;color:var(--aqua);text-transform:uppercase;font-weight:600}
+  .navlinks{display:flex;gap:34px;align-items:center}
+  .navlinks a{font-size:.9rem;font-weight:500;color:var(--ink);transition:color .2s}
+  .navlinks a:hover{color:var(--aqua)}
+  .btn{display:inline-block;background:var(--navy);color:var(--white)!important;padding:13px 26px;border-radius:999px;font-weight:600;font-size:.9rem;transition:transform .2s,box-shadow .2s,background .2s}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(44,95,111,.24);background:#234e5c}
+  .btn.aqua{background:var(--aqua)}.btn.aqua:hover{background:#4bb0b7;box-shadow:0 12px 26px rgba(91,194,201,.32)}
+  .menu-btn{display:none;background:none;border:0;cursor:pointer}
+
+  /* HERO */
+  .hero{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--pearl) 0%,var(--mist) 100%)}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center;padding-top:78px;padding-bottom:84px}
+  .hero h1{font-size:clamp(2.5rem,5.2vw,4rem)}
+  .hero h1 em{font-style:italic;color:var(--aqua);font-weight:500}
+  .hero p.lead{font-size:1.12rem;color:var(--ink);margin:22px 0 14px;max-width:30ch}
+  .hero .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:14px}
+  .hero .reassure{margin-top:22px;font-size:.86rem;color:var(--muted);display:flex;align-items:center;gap:8px}
+  .hero .reassure svg{flex:0 0 auto}
+  .hero-art{position:relative;display:flex;justify-content:center}
+  .blob{position:absolute;inset:0;margin:auto;width:380px;height:380px;background:radial-gradient(circle at 35% 30%,var(--aqua-soft),var(--aqua));border-radius:46% 54% 58% 42%/50% 44% 56% 50%;filter:blur(2px);opacity:.95;animation:morph 9s ease-in-out infinite}
+  @keyframes morph{0%,100%{border-radius:46% 54% 58% 42%/50% 44% 56% 50%}50%{border-radius:58% 42% 44% 56%/46% 58% 42% 54%}}
+  .hero-tooth{position:relative;width:300px;height:300px;z-index:2;filter:drop-shadow(0 22px 36px rgba(44,95,111,.22))}
+  .floaty{position:absolute;background:var(--white);border-radius:16px;padding:10px 15px;box-shadow:0 14px 30px rgba(44,95,111,.14);font-size:.78rem;font-weight:600;color:var(--navy);display:flex;align-items:center;gap:8px;z-index:3}
+  .floaty .dot{width:9px;height:9px;border-radius:50%}
+  .f1{top:18px;left:-6px;animation:bob 4s ease-in-out infinite}
+  .f2{bottom:38px;right:-10px;animation:bob 4s ease-in-out .8s infinite}
+  .f3{bottom:-6px;left:40px;animation:bob 4s ease-in-out 1.6s infinite}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+
+  /* MARQUEE STRIP */
+  .strip{background:var(--navy);color:var(--white);padding:18px 0;overflow:hidden}
+  .strip .row{display:flex;gap:48px;align-items:center;white-space:nowrap;animation:slide 24s linear infinite;font-family:'Fraunces',serif;font-style:italic;font-size:1.05rem;color:#cfeaec}
+  .strip .row span{display:flex;align-items:center;gap:48px}
+  .strip .row b{color:var(--aqua-soft);font-style:normal;font-weight:600}
+  @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* SECTION SHELL */
+  section{padding:86px 0}
+  .sec-head{max-width:640px;margin-bottom:48px}
+  .sec-head h2{font-size:clamp(1.9rem,3.6vw,2.7rem);margin-top:12px}
+  .sec-head p{color:var(--muted);margin-top:14px;font-size:1.02rem}
+
+  /* SERVICES */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .card{background:var(--white);border:1px solid var(--mist);border-radius:22px;padding:32px 28px;transition:transform .25s,box-shadow .25s,border-color .25s}
+  .card:hover{transform:translateY(-6px);box-shadow:0 22px 44px rgba(44,95,111,.12);border-color:transparent}
+  .card .ic{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;margin-bottom:18px;background:var(--mist)}
+  .card.feat{background:linear-gradient(165deg,var(--aqua) 0%,var(--navy) 130%);border-color:transparent;color:#eafafa}
+  .card.feat h3{color:var(--white)}.card.feat p{color:#d6f0f1}
+  .card.feat .ic{background:rgba(255,255,255,.16)}
+  .card.feat .tag{display:inline-block;background:var(--peach);color:var(--navy);font-size:.66rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;border-radius:999px;margin-bottom:14px}
+  .card h3{font-size:1.28rem;margin-bottom:8px}
+  .card p{font-size:.94rem;color:var(--muted)}
+
+  /* SPECIALTIES split */
+  .spec{background:var(--pearl)}
+  .spec .wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .spec-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+  .spec-item{padding:22px 0;border-bottom:1px solid var(--mist)}
+  .spec-item:last-child{border-bottom:0}
+  .spec-item .n{font-family:'Fraunces',serif;font-weight:500;color:var(--aqua);font-size:.95rem;margin-right:10px}
+  .spec-item h3{display:inline;font-size:1.18rem}
+  .spec-item p{color:var(--muted);font-size:.93rem;margin-top:8px}
+  .spec-photo{position:relative;border-radius:26px;overflow:hidden;background:linear-gradient(160deg,var(--mist),var(--aqua-soft));aspect-ratio:4/5;display:grid;place-items:center}
+  .spec-photo .q{font-family:'Fraunces',serif;font-style:italic;font-size:1.45rem;color:var(--navy);text-align:center;padding:0 38px;line-height:1.4}
+  .spec-photo .by{position:absolute;bottom:26px;left:0;right:0;text-align:center;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);font-weight:600;opacity:.7}
+
+  /* PERSONAS / FOR WHOM */
+  .whom-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .whom{border-radius:22px;padding:30px 26px;background:var(--white);border:1px solid var(--mist)}
+  .whom .emoji{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;margin-bottom:16px;font-size:1.5rem;background:var(--mist)}
+  .whom h3{font-size:1.14rem;margin-bottom:8px}
+  .whom p{font-size:.9rem;color:var(--muted)}
+
+  /* PROCESS */
+  .proc{background:var(--navy);color:#dff2f3}
+  .proc h2{color:var(--white)}
+  .proc .sec-head .eyebrow{color:var(--aqua-soft)}
+  .proc .sec-head p{color:#bcd9dc}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
+  .step{position:relative;padding:26px 22px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:18px}
+  .step::before{counter-increment:s;content:"0" counter(s);font-family:'Fraunces',serif;font-size:2rem;color:var(--aqua-soft);display:block;margin-bottom:12px}
+  .step h3{color:var(--white);font-size:1.06rem;margin-bottom:6px}
+  .step p{font-size:.86rem;color:#bcd9dc}
+
+  /* CTA */
+  .final{background:linear-gradient(160deg,var(--mist),var(--pearl));text-align:center}
+  .final h2{font-size:clamp(2rem,4vw,2.9rem)}
+  .final p{color:var(--muted);max-width:48ch;margin:16px auto 28px;font-size:1.05rem}
+  .final .cta-row{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+
+  /* FOOTER */
+  footer{background:var(--navy);color:#bcd9dc;padding:60px 0 34px}
+  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:38px;border-bottom:1px solid rgba(255,255,255,.12)}
+  footer .brand .bn{color:var(--white)}
+  footer p{font-size:.9rem;margin-top:14px;max-width:34ch}
+  footer h4{color:var(--white);font-family:'Montserrat';font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;margin-bottom:16px;font-weight:600}
+  footer ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  footer ul a{font-size:.9rem;color:#bcd9dc;transition:color .2s}
+  footer ul a:hover{color:var(--aqua-soft)}
+  .foot-bottom{padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.8rem;color:#90b4b8}
+
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:920px){
+    .hero .wrap{grid-template-columns:1fr;text-align:center}
+    .hero p.lead{margin-left:auto;margin-right:auto}
+    .hero .cta-row,.hero .reassure{justify-content:center}
+    .hero-art{margin-top:24px;min-height:360px}
+    .spec .wrap{grid-template-columns:1fr}
+    .grid,.whom-grid{grid-template-columns:1fr}
+    .steps{grid-template-columns:1fr 1fr}
+    .foot-grid{grid-template-columns:1fr}
+    .navlinks{display:none}
+    .menu-btn{display:block}
+  }
+  @media(max-width:520px){.steps{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<!-- isotipo reutilizable como símbolo -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <linearGradient id="toothGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7FD8DC"/><stop offset="100%" stop-color="#5BC2C9"/>
+    </linearGradient>
+    <symbol id="tooth" viewBox="0 0 200 200">
+      <path d="M100 26 C70 26 52 38 46 60 C40 82 50 118 58 146 C63 163 71 176 81 176 C90 176 92 162 96 150 C98 143 102 143 104 150 C108 162 110 176 119 176 C129 176 137 163 142 146 C150 118 160 82 154 60 C148 38 130 26 100 26 Z" fill="url(#toothGrad)"/>
+      <path d="M72 50 C66 56 62 70 64 84 C72 70 78 60 86 54 C82 50 77 49 72 50 Z" fill="#FFFFFF" opacity="0.55"/>
+      <circle cx="83" cy="86" r="6.5" fill="#2C5F6F"/><circle cx="117" cy="86" r="6.5" fill="#2C5F6F"/>
+      <path d="M76 108 Q100 134 124 108" fill="none" stroke="#2C5F6F" stroke-width="7" stroke-linecap="round"/>
+      <circle cx="70" cy="104" r="7" fill="#FFB6A3" opacity="0.7"/><circle cx="130" cy="104" r="7" fill="#FFB6A3" opacity="0.7"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header>
+  <nav class="wrap">
+    <a class="brand" href="#inicio">
+      <svg><use href="#tooth"/></svg>
+      <span><span class="bn">Karina Terrasas</span><br><span class="bs">Ortodoncia · Ortopedia</span></span>
+    </a>
+    <div class="navlinks">
+      <a href="#servicios">Servicios</a>
+      <a href="#especialidad">Especialidad</a>
+      <a href="#para-quien">Para quién</a>
+      <a href="#proceso">Cómo trabajo</a>
+      <a class="btn aqua" href="#contacto">Agenda tu consulta</a>
+    </div>
+    <button class="menu-btn" aria-label="Menú" onclick="document.querySelector('.navlinks').style.display='flex'">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#2C5F6F" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round"/></svg>
+    </button>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="inicio" style="padding:0">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Paseo Tec · Monterrey, N.L.</span>
+      <h1>Tu sonrisa, en manos <em>cálidas y expertas</em>.</h1>
+      <p class="lead">Ortodoncia, ortopedia infantil y odontología preventiva para toda la familia, con explicaciones claras y trato cercano.</p>
+      <div class="cta-row">
+        <a class="btn" href="#contacto">Agenda tu primera consulta</a>
+        <a class="btn aqua" href="#servicios">Conoce los servicios</a>
+      </div>
+      <p class="reassure">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#5BC2C9" stroke-width="2.2"><path d="M20 6L9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Primera consulta de valoración sin costo · presupuestos claros y transparentes
+      </p>
+    </div>
+    <div class="hero-art">
+      <div class="blob"></div>
+      <svg class="hero-tooth"><use href="#tooth"/></svg>
+      <div class="floaty f1"><span class="dot" style="background:#5BC2C9"></span>Brackets estéticos</div>
+      <div class="floaty f2"><span class="dot" style="background:#FFB6A3"></span>Ortopedia para niños</div>
+      <div class="floaty f3"><span class="dot" style="background:#2C5F6F"></span>Limpieza y prevención</div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip" aria-hidden="true">
+  <div class="row">
+    <span><b>Ortodoncia</b> · <b>Ortopedia infantil</b> · <b>Odontología preventiva</b> · <b>Blanqueamiento</b> · <b>Ortodoncia</b> · <b>Ortopedia infantil</b> · <b>Odontología preventiva</b> · <b>Blanqueamiento</b> · </span>
+    <span><b>Ortodoncia</b> · <b>Ortopedia infantil</b> · <b>Odontología preventiva</b> · <b>Blanqueamiento</b> · <b>Ortodoncia</b> · <b>Ortopedia infantil</b> · <b>Odontología preventiva</b> · <b>Blanqueamiento</b> · </span>
+  </div>
+</div>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Servicios</span>
+      <h2>Todo lo que tu sonrisa necesita, en un solo lugar de confianza.</h2>
+      <p>Atiendo personalmente ortodoncia, ortopedia y prevención. Para tratamientos especializados, me apoyo en un equipo de especialistas de confianza, para que tu familia no tenga que ir de consultorio en consultorio.</p>
+    </div>
+    <div class="grid">
+      <div class="card feat reveal">
+        <span class="tag">Mi fuerte</span>
+        <div class="ic">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M12 3c-3 0-5 2-5 5 0 4 1 8 2 11 .4 1 1.6 1 2-.2l1-3 1 3c.4 1.2 1.6 1.2 2 .2 1-3 2-7 2-11 0-3-2-5-5-5z" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Ortodoncia</h3>
+        <p>Brackets tradicionales y estéticos para alinear tus dientes, mejorar tu mordida y darte la sonrisa que siempre quisiste.</p>
+      </div>
+      <div class="card feat reveal">
+        <span class="tag">Mi fuerte</span>
+        <div class="ic">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><circle cx="9" cy="9" r="2.4"/><circle cx="15" cy="9" r="2.4"/><path d="M7 15c1.5 2 8.5 2 10 0" stroke-linecap="round"/></svg>
+        </div>
+        <h3>Ortopedia infantil</h3>
+        <p>Corrijo a tiempo el crecimiento y la mordida de los más pequeños. Tratar temprano evita problemas mayores más adelante.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5BC2C9" stroke-width="1.8"><path d="M12 21s-7-5-7-11a4 4 0 017-2.6A4 4 0 0119 10c0 6-7 11-7 11z" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Odontología preventiva</h3>
+        <p>Limpiezas y revisiones que cuidan tu salud bucal antes de que aparezcan los problemas. Prevenir siempre es más fácil que corregir.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5BC2C9" stroke-width="1.8"><path d="M12 4l1.6 3.4L17 8l-2.6 2.4L15 14l-3-1.7L9 14l.6-3.6L7 8l3.4-.6z" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Blanqueamiento</h3>
+        <p>Recupera el brillo natural de tus dientes con un procedimiento seguro y profesional, ideal para esa foto o evento especial.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5BC2C9" stroke-width="1.8"><path d="M3 12h4l2-6 4 12 2-6h6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Valoración personalizada</h3>
+        <p>En tu primera cita escucho lo que necesitas, reviso tu caso y te explico tus opciones con honestidad, sin presionarte a nada.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ic">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#5BC2C9" stroke-width="1.8"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 12l2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <h3>Especialistas de apoyo</h3>
+        <p>¿Necesitas endodoncia, implantes u otro tratamiento? Te conecto con especialistas de confianza para resolverlo todo en familia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESPECIALIDAD -->
+<section class="spec" id="especialidad">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Mi especialidad</span>
+      <h2 style="font-size:clamp(1.9rem,3.6vw,2.6rem);margin-top:12px;margin-bottom:10px">Ortodoncia y ortopedia, hechas con calidez.</h2>
+      <p style="color:var(--muted);margin-bottom:26px">Sé que confiar la sonrisa de tu familia no es poca cosa. Por eso me tomo el tiempo de explicarte cada paso, con paciencia y sin tecnicismos.</p>
+      <ul class="spec-list">
+        <li class="spec-item"><span class="n">01</span><h3>Diagnóstico claro y honesto</h3><p>Te explico la diferencia entre ortodoncia y ortopedia, y qué necesita realmente tu caso. Nada de tratamientos innecesarios.</p></li>
+        <li class="spec-item"><span class="n">02</span><h3>Trato amable con niños</h3><p>Cuido que la experiencia sea tranquila y sin miedos, para que los más pequeños se sientan cómodos desde la primera visita.</p></li>
+        <li class="spec-item"><span class="n">03</span><h3>Resultados que se notan</h3><p>Estética, función y salud dental trabajando juntas para darte una sonrisa de la que estés orgullosa.</p></li>
+      </ul>
+    </div>
+    <div class="spec-photo reveal">
+      <p class="q">"Que sepa mucho y haga buen trabajo, pero que te trate con cariño."</p>
+      <span class="by">El sello de la Dra. Karina</span>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUIÉN -->
+<section id="para-quien">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Para quién</span>
+      <h2>Pensado para tu familia y para ti.</h2>
+      <p>Atiendo principalmente a familias, jóvenes y niños de la zona de Paseo Tec que buscan una atención cercana y de confianza.</p>
+    </div>
+    <div class="whom-grid">
+      <div class="whom reveal">
+        <div class="emoji">👨‍👩‍👧</div>
+        <h3>Familias</h3>
+        <p>Un solo lugar de confianza para cuidar la sonrisa de todos, desde los más pequeños hasta los papás.</p>
+      </div>
+      <div class="whom reveal">
+        <div class="emoji">✨</div>
+        <h3>Jóvenes</h3>
+        <p>¿Siempre quisiste arreglar tu sonrisa? Es el momento de invertir en ti, con opciones estéticas y facilidades de pago.</p>
+      </div>
+      <div class="whom reveal">
+        <div class="emoji">🧒</div>
+        <h3>Niños</h3>
+        <p>Ortopedia a la edad ideal, en un ambiente amable que combate el miedo al dentista desde la primera cita.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="proc" id="proceso">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Cómo trabajo</span>
+      <h2>Tu tratamiento, paso a paso.</h2>
+      <p>Sin sorpresas ni letras chiquitas. Así es como acompaño tu caso de principio a fin.</p>
+    </div>
+    <div class="steps">
+      <div class="step reveal"><h3>Primera consulta</h3><p>Nos conocemos, escucho lo que necesitas y reviso tu caso sin costo.</p></div>
+      <div class="step reveal"><h3>Plan y presupuesto</h3><p>Te presento tus opciones y un presupuesto claro y transparente.</p></div>
+      <div class="step reveal"><h3>Tratamiento</h3><p>Iniciamos a tu ritmo, con seguimiento cercano en cada cita.</p></div>
+      <div class="step reveal"><h3>Tu nueva sonrisa</h3><p>Disfrutas el resultado y cuidamos juntos que dure muchos años.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final" id="contacto">
+  <div class="wrap reveal">
+    <span class="eyebrow">Agenda</span>
+    <h2>Tu mejor sonrisa empieza aquí.</h2>
+    <p>Reserva tu primera consulta de valoración sin costo. Con gusto resuelvo tus dudas y te explico, con calma, lo que tu sonrisa necesita.</p>
+    <div class="cta-row">
+      <a class="btn aqua" href="https://wa.me/528100000000" target="_blank" rel="noopener">Escríbeme por WhatsApp</a>
+      <a class="btn" href="https://instagram.com/dra.karinaterrazas" target="_blank" rel="noopener">Sígueme en Instagram</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <a class="brand" href="#inicio">
+          <svg style="width:38px;height:38px"><use href="#tooth"/></svg>
+          <span><span class="bn">Karina Terrasas</span><br><span class="bs" style="color:var(--aqua-soft)">Ortodoncia · Ortopedia</span></span>
+        </a>
+        <p>Cuidando la sonrisa de las familias de Monterrey con calidez, prevención y trabajo bien hecho.</p>
+      </div>
+      <div>
+        <h4>Explora</h4>
+        <ul>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#especialidad">Especialidad</a></li>
+          <li><a href="#para-quien">Para quién</a></li>
+          <li><a href="#proceso">Cómo trabajo</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="#contacto">Paseo Tec, Monterrey, N.L.</a></li>
+          <li><a href="https://wa.me/528100000000">WhatsApp</a></li>
+          <li><a href="https://instagram.com/dra.karinaterrazas">@dra.karinaterrazas</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Dra. Karina Terrasas · Todos los derechos reservados.</span>
+      <span>Ortodoncia · Ortopedia · Odontología preventiva</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.14});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
